@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fingerprinting Example</title>
+</head>
+<body>
+  <script src="fingerprint.js"></script>
+  <div id="fingerprint"></div>
+  <script>
+    async function getFingerprint() {
+      const fingerprint = await Fingerprint.generate();
+      return fingerprint;
+    }
+    getFingerprint().then((fingerprint) => {
+      const realFingerprint = JSON.stringify(fingerprint, null, 2);
+      
+      document.getElementById("fingerprint").innerHTML = `
+      <h1>Your fingerprint</h1>
+      <p>This is a unique identifier that can be used to track you across different websites.</p>
+      <pre>${realFingerprint}</pre>
+    `;
+    });
+
+  </script>
+</body>
+</html>

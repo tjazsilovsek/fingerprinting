@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  },
+  "name": "fingerprinting",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  }
+}
